@@ -1,0 +1,71 @@
+
+ <div cdkDropoListGroup class="users-container">
+  <div cdkDropList [cdkDropListData]="myDataArray[0]"  
+  (cdkDropListDropped)="drop($event)" class="users-list">
+   <div class="container">
+    <div class="col">
+
+    </div>
+    <div class="row m-4">
+      <div class="col-sm m-1">
+        <ul class="list-group w-100">
+          <li  *ngFor="let product of myDataArray[0] | paginate: { itemsPerPage: 4, currentPage: p }"
+           cdkDrag class="list-group-item row" style="
+           background-color: rgb(250, 249, 249);
+           border-color: black;
+           cursor: pointer;
+           
+           ">
+            
+            
+            <div class="col-sm" style="font-weight: bold;">{{ product.title}}:</div>
+              
+      
+            <br>
+            <div class="col-sm">  
+              <b>Description:</b>
+              {{ product.description }} 
+              
+            </div>
+            <div class="col-sm">
+              <img class="object-fit-fill border rounded" style="width: 150px; height: 150px; float: right;"
+                 src="{{product.thumbnail}}">
+            </div>
+          
+            <br>
+            <div class="col-sm">
+              <b>Price:</b> ${{ product.price }} 
+              <br>
+              <b>Discount:</b> %{{ product.discountPercentage}} 
+              <br>
+              <b>Rating:</b> ({{ product.rating }} / 5)
+              <br>
+              <b>Left:</b> {{product.stock}}
+            </div>
+            
+            <br>
+            <div class="col-sm">
+              <b>Brand:</b> {{product.brand}}
+              <br>
+              <b>Category:</b> {{product.category}}
+            </div>
+           
+          
+          </li>
+          <div class="col-sm">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls> 
+          </div>
+        </ul>
+      </div>
+
+    
+    </div>
+  </div>
+  </div>
+
+ </div> 
+ 
+
+
+  
+
