@@ -1,3 +1,9 @@
+Start on VsCode:
+1 => npm install
+2 => ng build
+3 => ng serve
+
+
 # Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
